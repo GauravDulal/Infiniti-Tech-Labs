@@ -1,12 +1,19 @@
-import { Geist } from "next/font/google";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 import { COMPANY } from "@/lib/site";
 import "./globals.css";
 
-// One family for everything: display at 600, text at 400.
-const geist = Geist({
+// Road-sign type for hardware: condensed for titles, normal width for text.
+const display = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-geist",
+  weight: ["600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const text = Barlow({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-text",
   display: "swap",
 });
 
@@ -17,12 +24,12 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0f1010",
+  themeColor: "#181715",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={geist.variable} suppressHydrationWarning>
+    <html lang="en" className={`${display.variable} ${text.variable}`} suppressHydrationWarning>
       <body>
         <script
           // Marks the page as scripted before paint, so entrances can start hidden

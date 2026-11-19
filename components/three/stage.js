@@ -55,7 +55,7 @@ export async function initStage(canvas, section, { reduced }) {
   renderer.shadowMap.enabled = true; // taste-skill-ignore: WebGL shadow map
   renderer.shadowMap.type = THREE.PCFSoftShadowMap; // taste-skill-ignore: WebGL shadow map
 
-  const BG = new THREE.Color("#0f1010");
+  const BG = new THREE.Color("#181715");
   const scene = new THREE.Scene();
   scene.background = BG;
   scene.fog = new THREE.Fog(BG, 7, 15);
@@ -89,7 +89,7 @@ export async function initStage(canvas, section, { reduced }) {
   // an endless dark studio floor that fades into the page
   const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(60, 60),
-    new THREE.MeshStandardMaterial({ color: "#1b1c1c", roughness: 0.92 })
+    new THREE.MeshStandardMaterial({ color: "#23211e", roughness: 0.92 })
   );
   floor.rotation.x = -Math.PI / 2;
   floor.receiveShadow = true; // taste-skill-ignore: WebGL shadow
